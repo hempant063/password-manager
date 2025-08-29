@@ -11,13 +11,16 @@ def start():
 def add():
     u=input("Enter your username: ")
     p=input("Enter your password: ")
-    with open("up.txt", "w") as f:
+    with open("up.txt", "a") as f:
         f.write(f"{u}|{p}")
 
 
 def view():
-    pass
+    with open("up.txt", "r") as fo:
+        for line in fo.readlines():
+            u,p = line.split("|")
+            print(f"username: {u} and password: {p}")
 
 
-if __name__=="main":
+if __name__=="__main__":
     start()

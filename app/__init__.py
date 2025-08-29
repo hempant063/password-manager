@@ -16,7 +16,11 @@ def add():
 
 
 def view():
-    pass
+    with open("up.txt", "r") as fo:
+        for line in fo.readlines():
+            u,p = line.split("|")
+            print(f"username: {u} and password: {p}")
+
 
 if __name__=="__main__":
     start()
